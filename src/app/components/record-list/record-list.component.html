@@ -1,0 +1,28 @@
+<div class="record-list-container">
+    <div *ngIf="oUserData.length === 0">No data found</div>
+    <table *ngIf="oUserData.length > 0">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Reason</th>
+            <th>Full/Half day</th>
+            <th>Leave type</th>
+            <th></th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let oUser of oUserData" class="table-row">
+            <td>{{ oUser?.nDate | date:'MM/dd/yyyy' }}</td>
+            <td>{{ oUser?.sReason }}</td>
+            <td>{{ oUser?.bFullDay ? 'Full day' : 'Half day' }}</td>
+            <td>{{ oUser?.bIsLeaveTypeCL ? 'CL' : 'PL' }}</td>
+            <td class="operations-container">
+              <span class="material-symbols-outlined edit-icon">edit</span>
+              <span class="material-symbols-outlined edit-icon" (click)="fnDeleteRecordClick(oUser.sId)">delete</span>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+    <button mat-stroked-button color="primary" (click)="fnToggle()" class="secondary-btn">Add record</button>
+</div>

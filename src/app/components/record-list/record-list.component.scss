@@ -1,0 +1,53 @@
+:host {
+    width: 100%;
+}
+.record-list-container {
+    display: grid;
+    justify-items: center;
+}
+
+table {
+    text-align: center;
+    border-collapse: collapse;
+    width: 70%;
+    
+
+    & .table-row {
+        & .operations-container {
+            display: flex;
+            gap: 1rem;
+            & .edit-icon {
+                visibility: hidden;
+                cursor: pointer;
+            }
+            &:hover {
+                & .edit-icon {
+                    visibility: hidden;
+                }
+            }
+            
+        }
+        &:hover {
+            & .operations-container {
+                
+                & .edit-icon {
+                    visibility: visible;
+                }
+                
+            }
+        }
+
+        & th, td {
+            padding: 8px;
+        }
+        & td {
+            border-bottom: 1px solid black;
+        }
+    }
+}
+
+.secondary-btn {
+    position: absolute;
+    right: 3rem;
+    top: 2rem;
+}

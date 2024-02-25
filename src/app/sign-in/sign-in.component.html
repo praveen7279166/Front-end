@@ -1,0 +1,24 @@
+
+<div class="login-page-container">
+    <div class="header-container">
+        <h1>Log in to your account</h1>
+        <div>Welcome back! Please enter your details.</div>
+    </div>
+    
+    <div class="form-container">
+        <mat-form-field>
+            <mat-label>User name</mat-label>
+            <input matInput [(ngModel)]="sUserName">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input type="password" matInput [(ngModel)]="sPassword">
+        </mat-form-field>
+    
+        <button mat-raised-button color="primary" (click)="onSignIn()">{{ bIsSignIn ? 'Sign In' : 'Sign up'}}</button>
+    </div>
+
+    <button mat-stroked-button color="primary" (click)="bIsSignIn = !bIsSignIn" class="secondary-btn">{{ bIsSignIn ? 'Sign Up' : 'Sign In'}}</button>
+</div>
+
+
